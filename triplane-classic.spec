@@ -86,8 +86,11 @@ for i in 16 32 48; do
 	convert data/application_icon/%{name}.xpm -resize $i %{buildroot}%{_iconsdir}/hicolor/${i}x${i}/apps/%{name}.png
 done
 
+# Xvfb segfaults on BS on 2010.0
+%if %mdkversion >= 201010
 %check
 xvfb-run %make test
+%endif
 
 %clean
 rm -rf %{buildroot}
