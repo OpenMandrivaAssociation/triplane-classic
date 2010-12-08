@@ -1,7 +1,7 @@
 
 %define name	triplane-classic
 %define version	1.04
-%define rel	1
+%define rel	2
 
 Summary:	A side-scrolling dogfighting game
 Name:		%{name}
