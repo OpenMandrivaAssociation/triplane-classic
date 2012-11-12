@@ -1,0 +1,48 @@
+Index: triplane-classic-1.04/src/triplane.cpp
+===================================================================
+--- triplane-classic-1.04/src/triplane.cpp
++++ triplane-classic-1.04/src/triplane.cpp	2010-02-15 19:20:40.450069876 +0200
+@@ -146,7 +146,7 @@
+ 
+ //\ Parameter control
+ 
+-char parametrit[40][40];
++char *parametrit[40];
+ int parametri_kpl;
+ 
+ //\ Shots control
+@@ -3049,8 +3049,8 @@
+ 
+         }
+     } else {
+-        sprintf(levelname, parametrit[findparameter("-level")] + 6);
+-
++        strncpy(levelname, parametrit[findparameter("-level")] + 6, sizeof(levelname)-1);
++        levelname[sizeof(levelname)-1] = '\0';
+     }
+ 
+ 
+@@ -3593,8 +3593,8 @@
+     FILE *faili;
+     Bitmap *lakuva1;
+ 
+-    for (laskuri = 0; laskuri < argc; laskuri++)
+-        strcpy(parametrit[laskuri], argv[laskuri]);
++    for (laskuri = 0; laskuri < argc && laskuri < 40; laskuri++)
++        parametrit[laskuri] = argv[laskuri];
+ 
+     parametri_kpl = argc;
+ 
+Index: triplane-classic-1.04/src/triplane.h
+===================================================================
+--- triplane-classic-1.04/src/triplane.h
++++ triplane-classic-1.04/src/triplane.h	2010-02-15 19:18:15.810070752 +0200
+@@ -122,7 +122,7 @@
+ 
+ //\ Parameter control
+ 
+-extern char parametrit[40][40];
++extern char *parametrit[40];
+ extern int parametri_kpl;
+ 
+ //\ Shots control
