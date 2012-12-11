@@ -105,3 +105,17 @@ rm -rf %{buildroot}
 %doc %{_datadir}/applications/mandriva-%{name}-manual.desktop
 %{_mandir}/man6/%{name}.6*
 
+
+
+%changelog
+* Wed Dec 08 2010 Oden Eriksson <oeriksson@mandriva.com> 1.04-2mdv2011.0
++ Revision: 615260
+- the mass rebuild of 2010.1 packages
+
+  + Anssi Hannula <anssi@mandriva.org>
+    - run testsuite only on 2010.1+ due to BS Xvfb issues
+
+* Mon Feb 15 2010 Anssi Hannula <anssi@mandriva.org> 1.04-1mdv2010.1
++ Revision: 506276
+- initial Mandriva release
+
