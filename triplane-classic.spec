@@ -8,7 +8,7 @@ Name:		%{name}
 Version:	%{version}
 Release:	%mkrel %rel
 License:	GPLv3+
-URL:		http://triplane.sourceforge.net/
+URL:		https://triplane.sourceforge.net/
 Source:		http://sourceforge.net/projects/triplane/files/%name-%version.tar.gz
 # darcs get http://iki.fi/lindi/darcs/triplane-testsuite
 # cd triplane-testsuite; darcs changes (check that tere are actual changes since last update)
